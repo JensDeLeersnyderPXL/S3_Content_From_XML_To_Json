@@ -1,5 +1,5 @@
 import urllib.request
-from bs4 import BeautifulSoup 
+from bs4 import BeautifulSoup
 
 #html van de webpagina nemen
 fp = urllib.request.urlopen("https://staticimagesfortodoapp.s3.amazonaws.com/")
@@ -10,8 +10,8 @@ fp.close()
 
 #de html code omzetten naar xml
 bs_data = BeautifulSoup(mystr, 'xml')
-#alle elementen nemen van Key 
-b_unique = bs_data.find_all('Key') 
+#alle elementen nemen van Key
+b_unique = bs_data.find_all('Key')
 #het eerste Key element wegnemen omdat dit de folder is
 image_names = b_unique[1:]
 
@@ -20,7 +20,7 @@ image_names = b_unique[1:]
 links = []
 for image_name in image_names:
     image = image_name.contents
-    image_name_without_key = image[0].removesuffix("<Key>").removesuffix("</Key>")
+    image_name_without_key = image[0].lstrip("<Key>").lstrip("</Key>")
     source = "{\"url\": " + "\"https://staticimagesfortodoapp.s3.amazonaws.com/" + image_name_without_key + "\"" + "},"
     links.append(source)
 

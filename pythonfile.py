@@ -31,7 +31,7 @@ links[last_index] = links[last_index][:len(links[last_index]) - 1]
 links.insert(len(links),"]")
 
 #list uitschrijven naar file
-textfile = open("/home/ec2-user/CloudToDoApp/backend/data/carrousel.json", "w")
+textfile = open("/var/lib/docker/volumes/todoapp/_data/carrousel.json", "w")
 for element in links:
     textfile.write(element + "\n")
 textfile.close()

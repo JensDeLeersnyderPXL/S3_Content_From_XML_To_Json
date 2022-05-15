@@ -30,6 +30,7 @@ last_index = len(links) - 1
 links[last_index] = links[last_index][:len(links[last_index]) - 1]
 links.insert(len(links),"]")
 
+#list uitschrijven naar file
 textfile = open("carrousel.json", "w")
 for element in links:
     textfile.write(element + "\n")

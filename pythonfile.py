@@ -31,7 +31,7 @@ links[last_index] = links[last_index][:len(links[last_index]) - 1]
 links.insert(len(links),"]")
 
 #list uitschrijven naar file
-textfile = open("/home/ec2-user/Read_XML_S3/carrousel.json", "w")
+textfile = open("/home/ec2-user/CloudToDoApp/backend/data", "w")
 for element in links:
     textfile.write(element + "\n")
 textfile.close()

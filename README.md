@@ -11,3 +11,5 @@ https://github.com/2TIN-CloudServices1/CloudToDoApp
 ## installation 
 pip install -r requirements.txt 
 
+## running code
+python3 pythonfile.py REPLACE_LINK_TO_S3

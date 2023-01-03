@@ -1,14 +1,14 @@
 import urllib.request
 from bs4 import BeautifulSoup
 
-#html van de webpagina nemen
+#take to html from the webpage
 fp = urllib.request.urlopen("https://staticimagesfortodoapp.s3.amazonaws.com/")
 mybytes = fp.read()
 mystr = mybytes.decode("utf8")
 fp.close()
 
 
-#de html code omzetten naar xml
+#convert the html code to xml
 bs_data = BeautifulSoup(mystr, 'xml')
 #alle elementen nemen van Key
 b_unique = bs_data.find_all('Key')
@@ -16,7 +16,7 @@ b_unique = bs_data.find_all('Key')
 image_names = b_unique[1:]
 
 
-#links worden toegevoegd aan een array en al in het juiste formaat geplaats voor carrousel.json
+#links get converted to array and put in the right format for carrousel.json
 links = []
 for image_name in image_names:
     image = image_name.contents
@@ -24,13 +24,13 @@ for image_name in image_names:
     source = "{\"url\": " + "\"https://staticimagesfortodoapp.s3.amazonaws.com/" + image_name_without_key + "\"" + "},"
     links.append(source)
 
-#laatste formateren voor het in het documenten te plaatsen
+#last formatting for putting it in the document
 links.insert(0,"[")
 last_index = len(links) - 1
 links[last_index] = links[last_index][:len(links[last_index]) - 1]
 links.insert(len(links),"]")
 
-#list uitschrijven naar file
+#writing the list to the carrousel.json file
 textfile = open("/var/lib/docker/volumes/todoapp/_data/carrousel.json", "w")
 for element in links:
     textfile.write(element + "\n")

@@ -1,8 +1,9 @@
 import urllib.request
 from bs4 import BeautifulSoup
+import sys
 
 #take to html from the webpage
-fp = urllib.request.urlopen("https://staticimagesfortodoapp.s3.amazonaws.com/")
+fp = urllib.request.urlopen("sys.argv")
 mybytes = fp.read()
 mystr = mybytes.decode("utf8")
 fp.close()

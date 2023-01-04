@@ -3,8 +3,7 @@ from bs4 import BeautifulSoup
 import sys
 
 #take to html from the webpage
-url = str(sys.argv)
-fp = urllib.request.urlopen(url)
+fp = urllib.request.urlopen(https://jens-his-bucket-for-cloud-pe-that-is-very-hard.s3.amazonaws.com/)
 mybytes = fp.read()
 mystr = mybytes.decode("utf8")
 fp.close()

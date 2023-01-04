@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import sys
 
 #read file with url
-file = open("link.txt", "r")
+file = open("/S3_Content_From_XML_To_Json/link.txt", "r")
 url = str(file.read())
 
 #take to html from the webpage

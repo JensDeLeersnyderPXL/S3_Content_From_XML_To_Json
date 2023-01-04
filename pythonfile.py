@@ -2,8 +2,12 @@ import urllib.request
 from bs4 import BeautifulSoup
 import sys
 
+#read file with url
+file = open("link.txt", "r")
+url = str(file.read())
+
 #take to html from the webpage
-fp = urllib.request.urlopen("https://jens-his-bucket-for-cloud-pe-that-is-very-hard.s3.amazonaws.com/")
+fp = urllib.request.urlopen(url)
 mybytes = fp.read()
 mystr = mybytes.decode("utf8")
 fp.close()

@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import sys
 
 #take to html from the webpage
-fp = urllib.request.urlopen("sys.argv")
+fp = urllib.request.urlopen(sys.argv)
 mybytes = fp.read()
 mystr = mybytes.decode("utf8")
 fp.close()

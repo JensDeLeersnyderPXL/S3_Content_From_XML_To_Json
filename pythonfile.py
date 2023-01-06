@@ -26,7 +26,7 @@ links = []
 for image_name in image_names:
     image = image_name.contents
     image_name_without_key = image[0].lstrip("<Key>").lstrip("</Key>")
-    source = "{\"url\": " + "\"" + url.strip() + "\\" + image_name_without_key + "\"" + "},"
+    source = "{\"url\": " + "\"" + url.strip() + "\/" + image_name_without_key + "\"" + "},"
     links.append(source)
 
 #last formatting for putting it in the document

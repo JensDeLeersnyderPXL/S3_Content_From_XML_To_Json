@@ -1,4 +1,4 @@
-# Python script that will read all files in the folder images in from s3 bucket and export it to json format for angler framework
+# Python script that will read all files in the folder 'images' and export it to json format for angler framework
 
 ## description
 this code is used for the cloud pe of university PXL.
